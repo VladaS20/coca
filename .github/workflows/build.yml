@@ -1,30 +1,51 @@
-name: Deploy to GitHub Pages
+# Простой рабочий процесс для развёртывания статического контента на GitHub Pages
+name: Deploy static content to Pages
 
 on:
+  # Запускается при пушах в целевую ветку по умолчанию
   push:
-    branches: [main]
+    branches: ['main']
+
+  # Позволяет вам запускать этот рабочий процесс вручную из вкладки Actions
   workflow_dispatch:
 
+# Устанавливает разрешения для GITHUB_TOKEN, чтобы разрешить развёртывание на GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Разрешает одно параллельное развёртывание
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
-  build:
+  # Один рабочий процесс, так как мы просто развёртываем
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
+        uses: actions/checkout@v5
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-
+          node-version: lts/*
+          cache: 'npm'
       - name: Install dependencies
         run: npm ci
-
-      - name: Build project
+      - name: Build
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # измените на вашу папку сборки
+          # Загружаем папку dist
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
