@@ -1,0 +1,8 @@
+@use './mixins';
+@use './base';
+@use './globals';
+
+// components
+@use './components/header';
+@use '../scss/components/about/hero';
+@use './components/footer';
