@@ -76,9 +76,9 @@
       &::before {
         content: '';
         display: inline-block;
-        border-radius: 6px;
         width: 18px;
         height: 3px;
+        border-radius: 6px;
         background-color: var(--neutral-color-100);
       }
 
@@ -93,9 +93,9 @@
         top: 50%;
         left: 0;
         display: inline-block;
-        border-radius: 6px;
         width: 18px;
         height: 3px;
+        border-radius: 6px;
         background-color: var(--neutral-color-100);
       }
     }
