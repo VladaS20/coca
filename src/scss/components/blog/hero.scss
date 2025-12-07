@@ -25,13 +25,12 @@
 
   &-decor {
     &::before {
-      top: 1140px;
+      top: 0;
       left: 0;
     }
 
     &::after {
-      right: -100px;
-      bottom: -820px;
+     bottom: 550px;
     }
   }
 
