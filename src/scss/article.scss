@@ -1,0 +1,227 @@
+@use './mixins' as *;
+@use './base';
+@use './globals';
+
+// components
+@use './components/header';
+@use './components/footer';
+
+.article {
+  padding: 90px 0;
+
+  @include mini-desktop {
+    padding: 77px 0;
+  }
+
+  @include mobile {
+	padding: 44px 0;
+  }
+
+  &__container {
+    @include flex-justify-between;
+    flex-direction: column;
+    max-width: calc(
+      var(--container-artical-width) + (var(--container-padding) * 2)
+    );
+
+    @include mini-desktop {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    max-width: 970px;
+    margin-bottom: 114px;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include mini-desktop {
+      margin-bottom: 74px;
+    }
+
+    @include tablet {
+      margin-bottom: 44px;
+      font-size: 60px;
+    }
+
+    @include mobile {
+      margin-bottom: 38px;
+      font-size: 48px;
+    }
+
+    @include small-mobile {
+      margin-bottom: 30px;
+      font-size: 38px;
+    }
+  }
+
+  &__main {
+    width: 100%;
+
+    &-img {
+      margin-bottom: 80px;
+
+      @include tablet {
+        margin-bottom: 44px;
+      }
+      @include mobile {
+        margin-bottom: 38px;
+      }
+    }
+
+    &-head {
+      @include flex-all-between;
+      align-items: end;
+      margin-bottom: 24px;
+      font-weight: 400;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+		margin-bottom: 12px;
+      }
+    }
+
+    &-author {
+      font-style: normal;
+    }
+
+    &-text {
+      font-weight: 400;
+      line-height: 178%;
+      color: var(--neutral-color-100);
+      margin-bottom: 56px;
+
+      @include tablet {
+        margin-bottom: 32px;
+      }
+    }
+
+    &-title {
+      color: var(--neutral-color-140);
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &__comment {
+    &-text {
+      margin-bottom: 40px;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+    }
+
+    &-author {
+      @include flex-align-center;
+      gap: 24px;
+      font-style: normal;
+
+      &-avatar {
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      &-name {
+        font-weight: 600;
+        line-height: 144%;
+        color: var(--neutral-color-100);
+      }
+
+      &-professions {
+        font-weight: 500;
+        line-height: 162%;
+        color: var(--neutral-color-150);
+      }
+    }
+  }
+
+  &__written-by {
+    @include flex-all-between;
+    align-items: flex-start;
+    gap: 20px;
+
+	@include mobile {
+		flex-direction: column;
+		align-items: center;
+	}
+
+    &-img {
+      max-width: 200px;
+      justify-self: flex-start;
+    }
+
+    &-info {
+      @include flex-column;
+      max-width: 645px;
+
+      @include mini-desktop {
+        align-items: center;
+      }
+
+      &-author {
+        &-social {
+          &-list {
+            @include flex-align-center;
+            gap: 32px;
+            margin-bottom: 8px;
+
+            @include tablet {
+              gap: 18px;
+            }
+			
+          }
+
+          &-link {
+            transition: opacity var(--transition);
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+
+      &-head {
+        @include flex-column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+
+		@include mobile {
+			align-items: center;
+		}
+
+        &-top,
+        &-bottom {
+          font-weight: 400;
+          line-height: 150%;
+          color: var(--neutral-color-150);
+        }
+
+        &-center {
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 131%;
+          letter-spacing: -0.03em;
+          color: var(--neutral-color-100);
+        }
+      }
+
+      &-text {
+        font-weight: 400;
+        line-height: 178%;
+        color: var(--neutral-color-100);
+      }
+    }
+  }
+}
