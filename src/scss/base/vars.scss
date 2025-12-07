@@ -34,17 +34,21 @@
   // container
   --container-padding: 15px;
   --container-width: 1200px;
+  --container-artical-width: 940px;
 
   @include mini-desktop {
     --container-width: 1000px;
+    --container-artical-width: 740px;
   }
 
   @include tablet {
     --container-width: 860px;
+    --container-artical-width: 600px;
   }
 
   @include mobile {
     --container-width: 480px;
+    --container-artical-width: 380px;
   }
 
   // transition
