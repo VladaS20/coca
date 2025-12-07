@@ -14,18 +14,18 @@
   }
 
   @include mobile {
-	padding: 44px 0;
+    padding: 44px 0;
   }
 
   &__container {
     @include flex-justify-between;
+
     flex-direction: column;
     max-width: calc(
       var(--container-artical-width) + (var(--container-padding) * 2)
     );
 
     @include mini-desktop {
-      flex-direction: column;
       align-items: center;
       text-align: center;
     }
@@ -69,6 +69,7 @@
       @include tablet {
         margin-bottom: 44px;
       }
+
       @include mobile {
         margin-bottom: 38px;
       }
@@ -76,6 +77,7 @@
 
     &-head {
       @include flex-all-between;
+
       align-items: end;
       margin-bottom: 24px;
       font-weight: 400;
@@ -83,10 +85,10 @@
       color: var(--neutral-color-150);
 
       @include mobile {
+        gap: 8px;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
-		margin-bottom: 12px;
+        margin-bottom: 12px;
       }
     }
 
@@ -95,10 +97,10 @@
     }
 
     &-text {
+      margin-bottom: 56px;
       font-weight: 400;
       line-height: 178%;
       color: var(--neutral-color-100);
-      margin-bottom: 56px;
 
       @include tablet {
         margin-bottom: 32px;
@@ -106,9 +108,9 @@
     }
 
     &-title {
-      color: var(--neutral-color-140);
       margin-bottom: 24px;
       font-weight: 600;
+      color: var(--neutral-color-140);
     }
   }
 
@@ -123,6 +125,7 @@
 
     &-author {
       @include flex-align-center;
+
       gap: 24px;
       font-style: normal;
 
@@ -147,21 +150,23 @@
 
   &__written-by {
     @include flex-all-between;
-    align-items: flex-start;
-    gap: 20px;
 
-	@include mobile {
-		flex-direction: column;
-		align-items: center;
-	}
+    gap: 20px;
+    align-items: flex-start;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &-img {
-      max-width: 200px;
       justify-self: flex-start;
+      max-width: 200px;
     }
 
     &-info {
       @include flex-column;
+
       max-width: 645px;
 
       @include mini-desktop {
@@ -172,13 +177,13 @@
         &-social {
           &-list {
             @include flex-align-center;
+
             gap: 32px;
             margin-bottom: 8px;
 
             @include tablet {
               gap: 18px;
             }
-			
           }
 
           &-link {
@@ -193,13 +198,14 @@
 
       &-head {
         @include flex-column;
-        align-items: flex-start;
+
         gap: 16px;
+        align-items: flex-start;
         margin-bottom: 16px;
 
-		@include mobile {
-			align-items: center;
-		}
+        @include mobile {
+          align-items: center;
+        }
 
         &-top,
         &-bottom {
@@ -209,8 +215,8 @@
         }
 
         &-center {
-          font-weight: 600;
           font-size: 32px;
+          font-weight: 600;
           line-height: 131%;
           letter-spacing: -0.03em;
           color: var(--neutral-color-100);

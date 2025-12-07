@@ -9,6 +9,7 @@
 
   &__container {
     @include flex-all-between;
+
     gap: 30px;
     max-width: 1110px;
 
@@ -39,6 +40,7 @@
 
   &__list {
     @include flex-all-center;
+
     gap: 10px 30px;
     flex-wrap: wrap;
 
@@ -49,9 +51,10 @@
 
   &__item {
     @include flex-all-center;
-    border-radius: 16px;
+
     width: 160px;
     height: 90px;
+    border-radius: 16px;
     background-color: #fff;
   }
 }

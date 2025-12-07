@@ -1,8 +1,8 @@
 html {
-  box-sizing: border-box;
   font-family: Inter, sans-serif;
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
+  box-sizing: border-box;
   scroll-behavior: smooth !important;
 }
 
@@ -14,9 +14,9 @@ html {
 
 .body {
   position: relative;
-  overflow-x: hidden;
-  color: var(--neutral-color-100);
   background-color: var(--neutral-color-10);
+  color: var(--neutral-color-100);
+  overflow-x: hidden;
 
   &--fixed {
     overflow-y: hidden;
@@ -24,8 +24,8 @@ html {
 }
 
 img {
-  height: auto;
   max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -68,9 +68,9 @@ label {
 }
 
 .container {
+  max-width: calc(var(--container-width) + (var(--container-padding) * 2));
   margin: 0 auto;
   padding: 0 var(--container-padding);
-  max-width: calc(var(--container-width) + (var(--container-padding) * 2));
 }
 
 .hidden {

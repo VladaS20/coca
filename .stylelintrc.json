@@ -5,14 +5,7 @@
     "selector-class-pattern": null,
     "scss/dollar-variable-pattern": null,
     "scss/at-rule-no-unknown": null,
-    "scss/load-partial-extension": null, 
-    "property-no-vendor-prefix": null,
-    "font-family-no-duplicate-names": null,
-    "declaration-empty-line-before": null, 
-    "rule-empty-line-before": null,
-    "at-rule-empty-line-before": null,
-    "media-feature-range-notation": null,
-
+    "scss/load-partial-extension": null,
     "order/properties-order": [
       "position",
       "top",

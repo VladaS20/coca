@@ -1,0 +1,116 @@
+@use '../../mixins/' as *;
+
+.top-artical {
+  padding: 120px 0;
+  background-color: var(--neutral-color-100);
+
+  @include mobile {
+    padding: 121px 0;
+  }
+
+  @include mini-desktop {
+    padding: 77px 0;
+  }
+
+  @include mobile {
+    min-height: calc(100dvh - 109px);
+  }
+
+  &__container {
+    @include flex-justify-between;
+
+    flex-direction: column;
+
+    @include mini-desktop {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'card1 card2'
+      'card1 card4'
+      'card3 card4';
+    gap: 159px 32px;
+
+    @include tablet {
+      @include flex-column;
+
+      gap: 65px;
+    }
+
+    @include mobile {
+      gap: 35px;
+    }
+  }
+
+  &__card {
+    color: #fff;
+
+    &-img {
+      width: 100%;
+      margin-bottom: 24px;
+      object-fit: cover;
+
+      @include tablet {
+        max-width: 800px;
+        max-height: 420px;
+
+        @include mobile {
+          max-height: 220px;
+        }
+      }
+    }
+
+    &-head {
+      @include tablet {
+        @include flex-column;
+
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &-title {
+      position: relative;
+      width: 100%;
+      font-weight: 600;
+      color: #fff;
+      line-height: 120%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-desc {
+      width: 100%;
+      max-width: 515px;
+      margin-top: 24px;
+      font-weight: 500;
+      color: #7e8492;
+      line-height: 178%;
+    }
+  }
+}
+
+.card1 {
+  grid-area: card1;
+}
+
+.card2 {
+  grid-area: card2;
+}
+
+.card3 {
+  grid-area: card3;
+}
+
+.card4 {
+  grid-area: card4;
+}

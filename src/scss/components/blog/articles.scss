@@ -1,0 +1,153 @@
+@use '../../mixins/' as *;
+
+.articles {
+  padding: 160px 0;
+
+  @include mobile {
+    padding: 121px 0;
+  }
+
+  @include mini-desktop {
+    padding: 77px 0;
+  }
+
+  &__head {
+    @include flex-all-between;
+
+    align-items: end;
+    margin-bottom: 48px;
+
+    @include mobile {
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    max-width: 530px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: var(--neutral-color-100);
+    letter-spacing: -0.04em;
+
+    @include tablet {
+      max-width: 650px;
+    }
+  }
+
+  &__descr {
+    max-width: 376px;
+    font-weight: 500;
+    line-height: 178%;
+    color: var(--neutral-color-150);
+
+    @include tablet {
+      max-width: 450px;
+    }
+  }
+
+  &__rating {
+    @include flex-align-center;
+
+    gap: 8px;
+    margin-bottom: 19px;
+
+    &-num {
+      font-weight: 500;
+      line-height: 162%;
+      color: var(--neutral-color-100);
+    }
+  }
+
+  &__slider {
+    &.swiper-initialized {
+      margin-right: calc(-50vw + 50%);
+    }
+  }
+
+  &__section {
+    max-width: 407px;
+
+	@include small-tablet {
+		max-width: 355px;
+	}
+
+    &-img {
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      margin-bottom: 24px;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+    }
+
+    &-text {
+      margin-bottom: 24px;
+      font-weight: 500;
+      color: var(--neutral-color-150);
+      line-height: 178%;
+    }
+
+    &-link {
+      display: inline-block;
+      padding: 16px 32px;
+      border: 1px solid #ced1d8;
+      background-color: var(--neutral-color-10);
+      color: var(--neutral-color-100);
+      transition: background-color var(--transition);
+
+      &:hover {
+        background-color: var(--neutral-color-50);
+      }
+    }
+  }
+
+  &__btns {
+    @include flex-align-center;
+
+    gap: 16px;
+    justify-content: flex-end;
+    transform: translateY(-40px);
+
+    @include mini-desktop {
+      transform: translateY(5px);
+    }
+  }
+
+  &__btn {
+    @include flex-all-center;
+
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--neutral-color-40);
+    border-radius: 50%;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+
+    @include small-mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    & svg path {
+      transition: fill var(--transition);
+    }
+
+    &:hover {
+      border-color: var(--neutral-color-100);
+      background-color: var(--neutral-color-100);
+
+      & svg path {
+        fill: var(--neutral-color-10);
+      }
+    }
+
+    &--next {
+      transform: rotate(-180deg);
+    }
+  }
+}
